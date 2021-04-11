@@ -16,3 +16,5 @@ This a secret project for B********r. Hope u like it.
 1. Run migration/setup.sql
 2. Done
 
+User Catalogue - http://localhost/MangoMart
+Admin Order Management - http://localhost/MangoMart/admin

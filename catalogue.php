@@ -3,21 +3,20 @@
 require_once 'config/bootstrap.php';
 require_once ROOT_DIR.'/model/Product.php';
 
+session_start();
+
 $product = new Product();
 $productsList = $product->getAllPaginate(1);
 
-// echo '<pre>';
-// print_r($productsList); 
-// echo '</pre>';
-// die();
-
-include('./template/header.php')
+include('./template/header.php');
 ?>
 
 <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5">Product Catalogue</h1>
+
+    <?php include('./template/message.php'); ?>
 
     <?php foreach($productsList as $productItem): ?>
       <div class="card my-3" >

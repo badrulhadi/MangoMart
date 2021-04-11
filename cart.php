@@ -3,16 +3,13 @@
 require_once 'config/bootstrap.php';
 require_once ROOT_DIR.'/model/Cart.php';
 
+session_start();
+
 $userID = 1; //temp hard code
 $cart = new Cart();
 
 $cartsList = $cart->getAllByUserID($userID);
 $totalAmount = 0;
-
-// echo '<pre>';
-// print_r($cartsList); 
-// echo '</pre>';
-// die();
 
 include('./template/header.php')
 ?>
@@ -21,6 +18,8 @@ include('./template/header.php')
 
 <div class="container mb-4">
   <h1 class="mt-5">Cart</h1>
+
+  <?php include('./template/message.php'); ?>
 
   <div class="row">
     <div class="col-12">

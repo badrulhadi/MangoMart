@@ -3,16 +3,12 @@
 require_once 'config/bootstrap.php';
 require_once ROOT_DIR.'/model/Order.php';
 
+session_start();
+
 $userID = 1; //temp hard code
 
 $order = new Order();
 $ordersList = $order->getAllByUserID($userID);
-
-
-// echo '<pre>';
-// print_r($ordersList); 
-// echo '</pre>';
-// die();
 
 include('./template/header.php')
 ?>
@@ -21,6 +17,8 @@ include('./template/header.php')
 
 <div class="container mb-4">
   <h1 class="mt-5">Order</h1>
+
+  <?php include('./template/message.php'); ?>
 
   <div class="row">
     <div class="col-12">
